@@ -1,78 +1,237 @@
-# Bryan Snaily CAD Integration
-<p>This script holds functions for FiveM scripts to co-operate with Snaily CAD
-These functions can be called from other scripts with appropriate exports.</p>
+<!DOCTYPE html>
+<html lang="en">
 
-## Setup
----
-```lua
-Config.Framework = 'option'
-```
-``option`` - esx / qbcore - Set which framework to use
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bryan Snaily CAD Integration</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
 
-```lua
-Config.Defaults = {
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Bryan Snaily CAD Integration</h1>
+
+  <p>This script holds functions for FiveM scripts to co-operate with Snaily CAD. These functions can be called from other scripts with appropriate exports.</p>
+
+  <h2>Setup</h2>
+  <hr>
+
+  <pre><code>Config.Framework = 'option'</code></pre>
+  <p><code>option</code> - esx / qbcore - Set which framework to use</p>
+
+  <pre><code>Config.Defaults = {
     registrationStatus = 'Valid'
-}
-```
-This table helps to set Default values in certain functions.
+}</code></pre>
+  <p>This table helps to set Default values in certain functions.</p>
+  <p><code>registrationStatus</code> - License Type when registering new Vehicle or Weapon</p>
 
-``registrationStatus`` - License Type when registering new Vehicle or Weapon
-
-```lua
-Config.API = {
+  <pre><code>Config.API = {
     URL = 'api_url',
     TOKEN = 'token',
     TOKEN_HEADER_NAME = 'snaily-cad-api-token',
-}
-```
-``api_url`` - Link on which your CAD is hosted (example: https://api-test.your-domain-here/v1/)
+}</code></pre>
+  <p><code>api_url</code> - Link on which your CAD is hosted (example: https://api-test.your-domain-here/v1/)</p>
+  <p><code>token</code> - You can find this Token in your CAD Settings (Admin &gt; CAD Settings &gt; API Token)</p>
 
-``token`` - You can find this Token in your CAD Settings (Admin > CAD Settings > API Token)
+  <h2>Exports</h2>
+  <hr>
 
-## Exports
----
+  <h3>Insert New Citizen</h3>
 
-### Insert New Citizen
+  <pre><code>exports['bryan_snaily']:InsertNewCitizen(firstname, lastname, birthdate, gender, ethnicity, height, weight, hairColor, eyeColor, address)</code></pre>
 
-```lua
-exports['bryan_snaily']:InsertNewCitizen(firstname, lastname, birthdate, gender, ethnicity, height, weight, hairColor, eyeColor, address)
-```
+  <table>
+    <thead>
+      <tr>
+        <th>Paramater</th>
+        <th>Type</th>
+        <th>Optional</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>firstname</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Firstname</td>
+      </tr>
+      <tr>
+        <td><code>lastname</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Lastname</td>
+      </tr>
+      <tr>
+        <td><code>birthdate</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Birthdate (format: YYYY/MM/DD)</td>
+      </tr>
+      <tr>
+        <td><code>gender</code></td>
+        <td><code>(string/int)</code></td>
+        <td>Yes</td>
+        <td>Male</td>
+        <td>Gender</td>
+      </tr>
+      <tr>
+        <td><code>ethnicity</code></td>
+        <td><code>(string)</code></td>
+        <td>Yes</td>
+        <td>(Random)</td>
+        <td>Ethnicity</td>
+      </tr>
+      <tr>
+        <td><code>height</code></td>
+        <td><code>(int)</code></td>
+        <td>Yes</td>
+        <td></td>
+        <td>Height</td>
+      </tr>
+      <tr>
+        <td><code>weight</code></td>
+        <td><code>(int)</code></td>
+        <td>Yes</td>
+        <td></td>
+        <td>Weight</td>
+      </tr>
+      <tr>
+        <td><code>hairColor</code></td>
+        <td><code>(string)</code></td>
+        <td>Yes</td>
+        <td></td>
+        <td>Hair Color</td>
+      </tr>
+      <tr>
+        <td><code>eyeColor</code></td>
+        <td><code>(string)</code></td>
+        <td>Yes</td>
+        <td></td>
+        <td>Eye Color</td>
+      </tr>
+      <tr>
+        <td><code>address</code></td>
+        <td><code>(string)</code></td>
+        <td>Yes</td>
+        <td></td>
+        <td>Address</td>
+      </tr>
+    </tbody>
+  </table>
 
-| Paramater | Type | Optional | Default | Description |
-|-|-|:-:|-|-|
-| ``firstname`` | ``(string)`` | |  | Firstname |
-| ``lastname`` | ``(string)`` | |  | Lastname |
-| ``birthdate`` | ``(string)`` | | | Birthdate (format: YYYY/MM/DD) |
-| ``gender`` | ``(string/int)`` | Yes | Male | Gender |
-| ``ethnicity`` | ``(string)`` | Yes | (Random) | Ethnicity |
-| ``height`` | ``(int)`` | Yes |  | Height |
-| ``weight`` | ``(int)`` | Yes |  | Weight |
-| ``hairColor`` | ``(string)`` | Yes | | Hair Color |
-| ``eyeColor`` | ``(string)`` | Yes | | Eye Color |
-| ``address`` | ``(string)`` | Yes | | Address |
+  <h3>Insert New Weapon</h3>
 
-### Insert New Weapon
+  <pre><code>exports['bryan_snaily']:InsertNewWeapon(weaponHash, firstname, lastname)</code></pre>
 
-```lua
-exports['bryan_snaily']:InsertNewWeapon(weaponHash, firstname, lastname)
-```
+  <table>
+    <thead>
+      <tr>
+        <th>Paramater</th>
+        <th>Type</th>
+        <th>Optional</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>weaponHash</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Weapon Hash (example: <code>WEAPON_PISTOL</code>)</td>
+      </tr>
+      <tr>
+        <td><code>firstname</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Owner's Firstname</td>
+      </tr>
+      <tr>
+        <td><code>lastname</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Owner's Lastname</td>
+      </tr>
+    </tbody>
+  </table>
 
-| Paramater | Type | Optional | Default | Description |
-|-|-|:-:|-|-|
-| ``weaponHash`` | ``(string)`` | |  | Weapon Hash (example: ``WEAPON_PISTOL``) |
-| ``firstname`` | ``(string)`` | |  | Owner's Firstname |
-| ``lastname`` | ``(string)`` | |  | Owner's Lastname |
+  <h3>Insert New Vehicle</h3>
 
-### Insert New Vehicle
+  <pre><code>exports['bryan_snaily']:InsertNewVehicle(plate, vehicleHash, firstname, lastname, color)</code></pre>
 
-```lua
-exports['bryan_snaily']:InsertNewVehicle(plate, vehicleHash, firstname, lastname, color)
-```
+  <table>
+    <thead>
+      <tr>
+        <th>Paramater</th>
+        <th>Type</th>
+        <th>Optional</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>plate</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Plate</td>
+      </tr>
+      <tr>
+        <td><code>vehicleHash</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Vehicle Hash (example: <code>blista</code>)</td>
+      </tr>
+      <tr>
+        <td><code>firstname</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Owner's Firstname</td>
+      </tr>
+      <tr>
+        <td><code>lastname</code></td>
+        <td><code>(string)</code></td>
+        <td></td>
+        <td></td>
+        <td>Owner's Lastname</td>
+      </tr>
+      <tr>
+        <td><code>color</code></td>
+        <td><code>(string)</code></td>
+        <td>Yes</td>
+        <td></td>
+        <td>Vehicle Color</td>
+      </tr>
+    </tbody>
+  </table>
 
-| Paramater | Type | Optional | Default | Description |
-|-|-|:-:|-|-|
-| ``plate`` | ``(string)`` | |  | Plate |
-| ``vehicleHash`` | ``(string)`` | |  | Vehicle Hash (example: ``blista``) |
-| ``firstname`` | ``(string)`` | |  | Owner's Firstname |
-| ``lastname`` | ``(string)`` | |  | Owner's Lastname |
-| ``color`` | ``(string)`` | Yes |  | Vehicle Color |
+</body>
+
+</html>
