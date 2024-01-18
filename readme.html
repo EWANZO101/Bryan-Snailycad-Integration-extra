@@ -3,17 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub README Stats</title>
+    <title>Bryan Snaily CAD Integration</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border: 1px solid #ddd;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <div id="github-stats"></div>
-    <script src="https://cdn.jsdelivr.net/npm/github-readme-stats@latest/dist/widget.js"></script>
-    <script>
-        new GitHubReadmeStats({
-            username: 'EWANZO101',
-            repository: 'Bryan-Snailycad-Integration-',
-            theme: 'dark', // You can change this to 'light'
-        });
-    </script>
+
+<h1>Bryan Snaily CAD Integration</h1>
+
+<p>This script holds functions for FiveM scripts to cooperate with Snaily CAD. These functions can be called from other scripts with appropriate exports.</p>
+
+<h2>Setup</h2>
+<hr>
+
+<pre>
+<code>
+Config.Framework = 'option'
+</code>
+</pre>
+<p><code>option</code> - esx / qbcore - Set which framework to use</p>
+
+<pre>
+<code>
+Config.Defaults = {
+    registrationStatus = 'Valid'
+}
+</code>
+</pre>
+<p>This table helps to set Default values in certain functions.</p>
+<p><code>registrationStatus</code> - License Type when registering new Vehicle or Weapon</p>
+
+<pre>
+<code>
+Config.API = {
+    URL = 'api_url',
+    TOKEN = 'token',
+    TOKEN_HEADER_NAME = 'snaily-cad-api-token',
+}
+</code>
+</pre>
+<p><code>api_url</code> - Link on which your CAD is hosted (example: https://api-test.your-domain-here/v1/)</p>
+<p><code>token</code> - You can find this Token in your CAD Settings (Admin > CAD Settings > API Token)</p>
+
+<h2>Exports</h2>
+<hr>
+
+<h3>Insert New Citizen</h3>
+<pre>
+<code>
+exports['bryan_snaily']:InsertNewCitizen(firstname, lastname, birthdate, gender, ethnicity, height, weight, hairColor, eyeColor, address)
+</code>
+</pre>
+
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Optional</th>
+        <th>Default</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>firstname</code></td>
+        <td><code>string</code></td>
+        <td></td>
+        <td></td>
+        <td>Firstname</td>
+    </tr>
+    <tr>
+        <td><code>lastname</code></td>
+        <td><code>string</code></td>
+        <td></td>
+        <td></td>
+        <td>Lastname</td>
+    </tr>
+    <!-- Add more rows as needed -->
+</table>
+
+<h3>Insert New Weapon</h3>
+<pre>
+<code>
+exports['bryan_snaily']:InsertNewWeapon(weaponHash, firstname, lastname)
+</code>
+</pre>
+
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Optional</th>
+        <th>Default</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>weaponHash</code></td>
+        <td><code>string</code></td>
+        <td></td>
+        <td></td>
+        <td>Weapon Hash (example: <code>WEAPON_PISTOL</code>)</td>
+    </tr>
+    <tr>
+        <td><code>firstname</code></td>
+        <td><code>string</code></td>
+        <td></td>
+        <td></td>
+        <td>Owner's Firstname</td>
+    </tr>
+    <tr>
+        <td><code>lastname</code></td>
+        <td><code>string</code></td>
+        <td></td>
+        <td></td>
+        <td>Owner's Lastname</td>
+    </tr>
+    <!-- Add more rows as needed -->
+</table>
+
+<h3>Insert New Vehicle</h3>
+<pre>
+<code>
+exports['bryan_snaily']:InsertNewVehicle(plate, vehicleHash, firstname, lastname, color)
+</code>
+</pre>
+
+<table>
+    <tr>
+        <th>Parameter</th>
+        <th>Type</th>
+        <th>Optional</th>
+        <th>Default</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><code>plate</code></td>
+        <td><code>string</code></td>
+        <td></td>
+        <td></td>
+        <td>Plate</td>
+    </tr>
+    <tr>
+        <td><code>vehicleHash</code></td>
+        <td><code>string</code></td>
+        <td></td>
+        <td></td>
+        <td>Vehicle Hash (example: <code>blista</code>)</td>
+    </tr>
+    <tr>
+        <td><code>firstname</code></td>
+        <td><code>string</code></td>
+        <td></td>
+        <td></td>
+        <td>Owner's Firstname</td>
+    </tr>
+    <tr>
+        <td><code>lastname</code></td>
+        <td><code>string</code></td>
+        <td></td>
+        <td></td>
+        <td>Owner's Lastname</td>
+    </tr>
+    <tr>
+        <td><code>color</code></td>
+        <td><code>string</code></td>
+        <td>Yes</td>
+        <td></td>
+        <td>Vehicle Color</td>
+    </tr>
+    <!-- Add more rows as needed -->
+</table>
+
 </body>
 </html>
