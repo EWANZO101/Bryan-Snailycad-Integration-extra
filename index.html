@@ -1,4 +1,3 @@
-@ -1,118 +0,0 @@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,28 +10,19 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            transition: background-color 0.3s ease;
-        }
-
-        body.dark-mode {
-            background-color: #222;
+            background-color: #333; /* Set dark background color */
             color: #ddd;
+            transition: background-color 0.3s ease;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #555; /* Set dark container background color */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-top: 50px;
             transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .container.dark-mode {
-            background-color: #333;
         }
 
         h1 {
@@ -61,25 +51,13 @@
             background-color: #3367d6;
         }
 
-        button.dark-mode {
-            background-color: #333;
-        }
-
-        button.dark-mode:hover {
-            background-color: #555;
-        }
-
         footer {
             margin-top: 50px;
             text-align: center;
             padding: 10px;
-            background-color: #333;
+            background-color: #555; /* Set dark footer background color */
             color: #fff;
             transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        footer.dark-mode {
-            background-color: #555;
         }
     </style>
 </head>
@@ -102,19 +80,15 @@
         <button id="downloadBtn">Download Integration Script</button>
         <button onclick="window.location.href='https://youtu.be/feReBlgJZBM'">Want to see a sneak peek</button>
 
-        <button class="dark-mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-
         <button onclick="window.open('readme.html', '_blank')">Go to our Script readme</button>
-
 
         <p>Upgrade your server with Bryan's QB&ESX SnailyCAD Integration script and enjoy a more efficient and streamlined management experience!</p>
     </div>
 
-    <footer class="dark-mode">
+    <footer>
         <p>&copy; 2024 SwiftPeak Hosting. All rights reserved.</p>
     </footer>
 
-    
 </body>
 
 </html>
