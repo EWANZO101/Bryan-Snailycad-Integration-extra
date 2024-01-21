@@ -61,18 +61,26 @@
         <p>Upgrade your server with Bryan's QB&ESX SnailyCAD Integration script and enjoy a more efficient and streamlined management
             experience!</p>
     </div>
+
     <footer>
         <p>&copy; 2024 SwiftPeak Hosting. All rights reserved.</p>
     </footer>
 
     <script>
         document.getElementById('downloadBtn').addEventListener('click', async function () {
-            // Fetch a one-time download link from the serverless function
-            const response = await fetch('.netlify/functions/getDownloadLink');
-            const downloadLink = await response.text();
+            // Fetch the one-time download link from GitHub raw content
+            const response = await fetch('https://raw.githubusercontent.com/EWANZO101/Bryan-Snailycad-Integration-/main/bryan_snaily/your_file.zip');
+            const blob = await response.blob();
 
-            // Redirect to the obtained download link
-            window.location.href = downloadLink;
+            // Create a temporary anchor element to trigger the download
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'your_file.zip';
+
+            // Trigger the download and remove the temporary link
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     </script>
 </body>
