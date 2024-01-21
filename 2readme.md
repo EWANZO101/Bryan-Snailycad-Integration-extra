@@ -5,6 +5,8 @@ These functions can be called from other scripts with appropriate exports.</p>
 ## Setup
 ```lua
 Config.Defaults = {
+  Framework = 'qbcore' -- Choose between 'qbcore' or 'esx'
+
     registrationStatus = 'Valid'
 }
 ```
