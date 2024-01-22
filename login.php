@@ -15,3 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+<?php
+echo "Hello from login.php!";
+?>
