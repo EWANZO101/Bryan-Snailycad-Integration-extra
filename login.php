@@ -24,19 +24,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login</title>
     <style>
         body {
-            background-color: #f0f0f0; /* Set your desired background color */
+            background-color: #1f1f1f; /* Set your desired dark background color */
+            color: #fff; /* Set text color to white or a contrasting color */
             font-family: Arial, sans-serif;
         }
 
         h2 {
-            color: #333;
+            color: #fff;
         }
 
         form {
             max-width: 300px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: #333; /* Adjust form background color */
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -48,15 +49,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         input {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 12px;
+            padding: 10px;
+            margin-bottom: 15px;
             box-sizing: border-box;
+            border: 1px solid #555;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #4caf50; /* Highlight color on focus */
         }
 
         input[type="submit"] {
             background-color: #4caf50;
             color: #fff;
             cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            transition: background-color 0.3s;
         }
 
         input[type="submit"]:hover {
@@ -68,10 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Login</h2>
     <form method="post" action="">
         <label for="username">Username:</label>
-        <input type="text" name="username" required><br>
+        <input type="text" name="username" required>
 
         <label for="license_key">License Key:</label>
-        <input type="text" name="license_key" required><br>
+        <input type="text" name="license_key" required>
 
         <input type="submit" value="Login">
     </form>
