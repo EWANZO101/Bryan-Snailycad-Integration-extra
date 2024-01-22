@@ -1,188 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trusted by Thriving Communities</title>
-  <style>
-    /* Reset default margin and padding */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing Bryan's QB&ESX SnailyCAD Integration</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333; /* Set dark background color */
+            color: #ddd;
+            transition: background-color 0.3s ease;
+        }
 
-    /* Basic styling */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #5145CD;
-      color: #fff;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      position: relative;
-    }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #555; /* Set dark container background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
 
-    .container {
-      max-width: 400px;
-      margin: 20px auto;
-    }
+        h1 {
+            color: #4285f4;
+        }
 
-    .community {
-      background-color: #E02424;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin: 10px 0;
-      width: 100%; /* Adjusted width to take the full width of the container */
-      text-align: center;
-    }
+        p {
+            margin-bottom: 15px;
+        }
 
-    .community a {
-      display: block;
-      margin-top: 15px;
-      text-decoration: none;
-      background-color: #fff;
-      color: #5145CD;
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
+        ul {
+            margin-bottom: 15px;
+        }
 
-    .community a:hover {
-      background-color: #ddd;
-    }
+        /* Updated button styling */
+        .download-button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+            display: block;
+        }
 
-    /* Footer styling */
-    footer {
-      text-align: center;
-      padding: 10px 0;
-      background-color: #333;
-      color: #fff;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
+        .download-button:hover {
+            background-color: #3367d6;
+        }
 
-    p {
-      font-size: 110%;
-    }
+        button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+            display: block;
+        }
 
-    /* Button styles */
-    .explore-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 5px;
-      border: 1px solid #007bff;
-      transition: background-color 0.3s ease;
-    }
+        button:hover {
+            background-color: #3367d6;
+        }
 
-    .explore-button:hover {
-      background-color: #0056b3;
-    }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            padding: 10px;
+            background-color: #555; /* Set dark footer background color */
+            color: #fff;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
 
-    /* Styles for the navbar */
-    .navbar {
-      width: 100%;
-      z-index: 999;
-      position: fixed;
-      top: 0;
-      padding: 20px 0;
-      font-family: 'Ubuntu', sans-serif;
-      transition: background-color 0.3s ease;
-      background-color: #154c79;
-      color: #fff;
-    }
-
-    .navbar .max-width {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .navbar .menu {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-
-    .navbar .menu li {
-      margin-right: 15px;
-    }
-
-    .navbar .menu li a {
-      text-decoration: none;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .navbar .menu li a:hover {
-      color: crimson;
-    }
-  </style>
+    <!-- Add the Chatra chat widget script here -->
+    <script>
+        (function(d, w, c) {
+            w.ChatraID = '7726hd'; // Replace with your Chatra ID
+            var s = d.createElement('script');
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            s.async = true;
+            s.src = 'https://call.chatra.io/chatra.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'Chatra');
+    </script>
 </head>
-<body>
-  <nav class="navbar">
-    <div class="max-width">
-      <ul class="menu">
-        <!-- Your menu items here -->
-        <li><a href="customerdocs.html" class="menu-btn">Customerdocs</a></li>
-        <li><a href="about.html" class="menu-btn">About</a></li>
-        <li><a href="services.html" class="menu-btn">Services</a></li>
-        <li><a href="coming_soon.html" class="menu-btn">Staffdocs</a></li>
-        <li><a href="#teams" class="menu-btn">#Teams</a></li>
-        <li><a href="tnc.html" class="menu-btn">T&C</a></li>
-        <li><a href="urls.html" class="menu-btn">links</a></li>
-        <!-- Login and Signup links -->
-        <li><a href="login.html" class="menu-btn">Login</a></li>
-        <li><a href="signup.html" class="menu-btn">Signup</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="container">
-    <!-- Add five buttons linking to different HTML pages -->
-    <div class="community">
-      <a href="readmorehcrp.html" class="menu-btn">City Life | ZA | RP</a>
-    </div>
-    <div class="community">
-      <a href="San Andreas State Roleplay.html" class="menu-btn">San Andreas State Roleplay</a>
-    </div>
-    <div class="community">
-      <a href="readmorehcrp.html" class="menu-btn">United Network Roleplay</a>
-    </div>
-    <div class="community">
-      <a href="#" class="menu-btn">coming soon</a>
-    </div>
-    <div class="community">
-      <a href="#" class="menu-btn">coming soon</a>
-    </div>
-  </div>
-  <a href="https://status.swiftpeakhosting.co.uk/" class="explore-button">Our Status Page</a>
-  <footer>
-    <p>&copy; 2024 Swift Peak Hosting. All rights reserved.</p>
-  </footer>
-  <script>
-    // Add event listeners to the buttons for redirection
-    document.querySelectorAll('.menu-btn').forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        event.preventDefault();
-        redirectToPage(button.getAttribute('href'));
-      });
-    });
 
-    // Function to handle the redirection
-    function redirectToPage(pageUrl) {
-        window.location.href = pageUrl; // Redirects to the specified page
-    }
-  </script>
+<body>
+    <div class="container">
+        <h1>Introducing Bryan's QB&ESX SnailyCAD Integration</h1>
+        <p>Effortless integration for your qb or esx server.</p>
+
+        <p>With this script, you can streamline your server management processes:</p>
+
+        <ul>
+            <li>Automatically add new players to the CAD when they join the server</li>
+            <li>Seamlessly integrate weapons and cars into the CAD database</li>
+            <li>Enhance New Citizen Creation, Registering New Weapon, and New Vehicle functions</li>
+            <li>Customizable scripts for vehicle dealerships and weapon shops</li>
+        </ul>
+
+        <p>Facilitated by exports, these features contribute to an all-encompassing solution for your server experience.</p>
+        
+        <!-- Updated download button -->
+        <li><a href="Bryan-Snailycad-Integration-\cad scripts\bryan_snaily" download class="download-button">Download Bryan's QB&ESX SnailyCAD Integration</a><span> - </span></li>
+
+        <button onclick="window.location.href='https://youtu.be/feReBlgJZBM'" class="download-button">Want to see a sneak peek</button>
+
+        <button onclick="window.open('readme.html', '_blank')" class="download-button">Go to our Script readme</button>
+
+        <p>Upgrade your server with Bryan's QB&ESX SnailyCAD Integration script and enjoy a more efficient and streamlined management experience!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SwiftPeak Hosting. All rights reserved.</p>
+    </footer>
+
 </body>
+
 </html>
