@@ -27,6 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #1f1f1f; /* Set your desired dark background color */
             color: #fff; /* Set text color to white or a contrasting color */
             font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
 
         h2 {
@@ -34,8 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         form {
-            max-width: 300px;
-            margin: 0 auto;
+            width: 300px;
             padding: 20px;
             background-color: #333; /* Adjust form background color */
             border-radius: 5px;
@@ -77,8 +81,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <h2>Login</h2>
     <form method="post" action="">
+        <h2>Login</h2>
         <label for="username">Username:</label>
         <input type="text" name="username" required>
 
