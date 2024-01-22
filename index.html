@@ -1,130 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introducing Bryan's QB&ESX SnailyCAD Integration</title>
+    <title>Login</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a; /* Dark background color */
+            color: #fff; /* Text color */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            background-color: #333; /* Set dark background color */
-            color: #ddd;
-            transition: background-color 0.3s ease;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 50px auto 0 auto;
+        form {
+            background-color: #333; /* Form background color */
             padding: 20px;
-            background-color: #555; /* Set dark container background color */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        h1 {
-            color: #4285f4;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        ul {
-            margin-bottom: 15px;
-        }
-
-        /* Updated button styling */
-        .download-button {
-            background-color: #4285f4;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 10px;
-            transition: background-color 0.3s ease;
-            display: block;
-        }
-
-        .download-button:hover {
-            background-color: #3367d6;
-        }
-
-        button {
-            background-color: #4285f4;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 10px;
-            transition: background-color 0.3s ease;
-            display: block;
-        }
-
-        button:hover {
-            background-color: #3367d6;
-        }
-
-        footer {
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
             text-align: center;
-            padding: 10px;
-            background-color: #555; /* Set dark footer background color */
-            color: #fff;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            position: fixed;
-            bottom: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
             width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #444;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50; /* Green button color */
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker green on hover */
         }
     </style>
-
-    <!-- Add the Chatra chat widget script here -->
-    <script>
-        (function(d, w, c) {
-            w.ChatraID = '7726hd'; // Replace with your Chatra ID
-            var s = d.createElement('script');
-            w[c] = w[c] || function() {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            s.async = true;
-            s.src = 'https://call.chatra.io/chatra.js';
-            if (d.head) d.head.appendChild(s);
-        })(document, window, 'Chatra');
-    </script>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Introducing Bryan's QB&ESX SnailyCAD Integration</h1>
-
-        <p>Effortless integration for your QB or ESX server.</p>
-
-        <p>Streamline your server management processes with this powerful script:</p>
-
-        <ul>
-            <li>Automatically add new players to the CAD when they join the server.</li>
-            <li>Seamlessly integrate weapons and cars into the CAD database.</li>
-            <li>Enhance New Citizen Creation, Registering New Weapon, and New Vehicle functions.</li>
-            <li>Customizable scripts for vehicle dealerships and weapon shops.</li>
-        </ul>
-
-        <p>These features, facilitated by exports, contribute to an all-encompassing solution for your server experience.</p>
-        
-        <!-- Updated download button -->
-        <li><a href="\cad scripts\bryan_snaily.rar" download class="download-button">Download Bryan's QB&ESX SnailyCAD Integration</a><span> - </span></li>
-
-        <button onclick="window.location.href='#'" class="download-button">Want to see a sneak peek</button>
-
-        <button onclick="window.open('readme.html', '_blank')" class="download-button">Go to our Script readme</button>
-
-        <p>Upgrade your server with Bryan's QB&ESX SnailyCAD Integration script and enjoy a more efficient and streamlined management experience!</p>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 SwiftPeak Hosting. All rights reserved.</p>
-    </footer>
-
+    <form action="login.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+        <label for="license_key">License Key:</label>
+        <input type="text" id="license_key" name="license_key" required><br>
+        <input type="submit" value="Login">
+    </form>
 </body>
-
 </html>
