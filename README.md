@@ -16,4 +16,4 @@ Stay tuned for the upcoming release, where we'll introduce even more enhancement
 
 ## Installation
 
-u can find our readme here https://snailycad-integration.swiftpeakhosting.co.uk/
+u can find our readme to install here https://snailycad-integration.swiftpeakhosting.co.uk/
