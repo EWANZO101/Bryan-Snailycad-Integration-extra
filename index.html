@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bryan Snaily CAD Integration</title>
+</head>
+
+<body>
+
+    <p>This script holds functions for FiveM scripts to co-operate with Snaily CAD. These functions can be called from
+        other scripts with appropriate exports.</p>
+
+    <h2>Setup</h2>
+
+    <pre><code>Config.Defaults = {
+    registrationStatus = 'Valid'
+}
+    </code></pre>
+
+    <p>This table helps to set Default values in certain functions.</p>
+
+    <pre><code>registrationStatus - License Type when registering new Vehicle or Weapon
+    </code></pre>
+
+    <pre><code>Config.API = {
+    URL = 'api_url',
+    TOKEN = 'token',
+    TOKEN_HEADER_NAME = 'snaily-cad-api-token',
+}
+    </code></pre>
+
+    <pre><code>URL - Link on which your CAD is hosted (example: https://api.your-domain-here/v1/ or
+    https://api-test.your-domain-here/v1/)
+    TOKEN - You can find this Token in your CAD Settings (Admin > CAD Settings > API Token)
+    </code></pre>
+
+    <h2>Exports</h2>
+
+    <h3>Is Citizen Registered</h3>
+
+    <pre><code>exports['bryan_snaily']:IsCitizenRegistered(firstname, lastname)
+    </code></pre>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Optional</th>
+                <th>Default</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>firstname</td>
+                <td>(string)</td>
+                <td></td>
+                <td></td>
+                <td>Character's Firstname</td>
+            </tr>
+            <tr>
+                <td>lastname</td>
+                <td>(string)</td>
+                <td></td>
+                <td></td>
+                <td>Character's Lastname</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Insert New Citizen</h3>
+
+    <pre><code>exports['bryan_snaily']:InsertNewCitizen(firstname, lastname, birthdate, gender, ethnicity, height, weight,
+    hairColor, eyeColor, address)
+    </code></pre>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Optional</th>
+                <th>Default</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>firstname</td>
+                <td>(string)</td>
+                <td></td>
+                <td></td>
+                <td>Firstname</td>
+            </tr>
+            <tr>
+                <td>lastname</td>
+                <td>(string)</td>
+                <td></td>
+                <td></td>
+                <td>Lastname</td>
+            </tr>
+            <tr>
+                <td>birthdate</td>
+                <td>(string)</td>
+                <td></td>
+                <td></td>
+                <td>Birthdate (format: YYYY/MM/DD)</td>
+            </tr>
+            <tr>
+                <td>gender</td>
+                <td>(string/int)</td>
+                <td>Yes</td>
+                <td>Male</td>
+                <td>Gender</td>
+            </tr>
+            <tr>
+                <td>ethnicity</td>
+                <td>(string)</td>
+                <td>Yes</td>
+                <td>(Random)</td>
+                <td>Ethnicity</td>
+            </tr>
+            <tr>
+                <td>height</td>
+                <td>(int)</td>
+                <td>Yes</td>
+                <td></td>
+                <td>Height</td>
+            </tr>
+            <tr>
+                <td>weight</td>
+                <td>(int)</td>
+                <td>Yes</td>
+                <td></td>
+                <td>Weight</td>
+            </tr>
+            <tr>
+                <td>hairColor</td>
+                <td>(string)</td>
+                <td>Yes</td>
+                <td></td>
+                <td>Hair Color</td>
+            </tr>
+            <tr>
+                <td>eyeColor</td>
+                <td>(string)</td>
+                <td>Yes</td>
+                <td></td>
+                <td>Eye Color</td>
+            </tr>
+            <tr>
+                <td>address</td>
+                <td>(string)</td>
+                <td>Yes</td>
+                <td></td>
+                <td>Address</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Repeat similar formatting for other export functions -->
+
+    <h2>Integration</h2>
+
+    <h3>ESX</h3>
+
+    <details>
+        <summary>Insert New Citizen</summary>
+        <pre><code>esx_identity/server/main.lua
+ESX.RegisterServerCallback('esx_identity:registerIdentity', function(source, cb, data)
+    &lt;...&gt;
+
+    local formattedFirstName = formatName(data.firstname)
+    local formattedLastName = formatName(data.lastname)
+    local formattedDate = formatDate(data.dateofbirth)
+
+    data.firstname = formattedFirstName
+    data.lastname = formattedLastName
+    data.dateofbirth = formattedDate
+    local Identity = {
+        firstName = formattedFirstName,
+        lastName = formattedLastName,
+        dateOfBirth = formattedDate,
+        sex = data.sex,
+        height = data.height
+    }
+
+    -- Insert This Here --
+    exports['bryan_snaily']:InsertNewCitizen(formattedFirstName, formattedLastName, formattedDate, data.sex, nil, data.height)
+    --
+
+    TriggerEvent('esx_identity:completedRegistration', source, data)
+    TriggerClientEvent('esx_identity:setPlayerData', source, Identity)
+    cb(true)
+end)
+</code></pre>
+    </details>
+
+    <!-- Repeat similar formatting for other ESX integration points -->
+
+    <h3>QB</h3>
+
+    <details>
+        <summary>Insert New Citizen</summary>
+        <pre><code>qb-multicharacter/server/main.lua
+RegisterNetEvent('qb-multicharacter:server:createCharacter', function(data)
+    local src = source
+    local newData = {}
+    newData.cid = data.cid
+    newData.charinfo = data
+    if QBCore.Player.Login(src, false, newData) then
+        repeat
+            Wait(10)
+        until hasDonePreloading[src]
+
+        -- Insert This Here --
+        exports['bryan_snaily']:InsertNewCitizen(data.firstname, data.lastname, data.birthdate, data.gender)
+        --
+
+        &lt;...&gt;
+    end
+end)
+</code></pre>
+    </details>
+
+    <!-- Repeat similar formatting for other QB integration points -->
+
+</body>
+
+</html>
