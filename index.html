@@ -11,16 +11,19 @@
             background-color: #222;
             color: #fff;
             font-family: 'Arial', sans-serif;
+            padding: 20px;
         }
 
-        h2, h3 {
+        h2,
+        h3 {
             color: #00aaff;
+            margin-bottom: 10px;
         }
 
         code {
             background-color: #333;
             color: #fff;
-            padding: 4px;
+            padding: 8px;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
         }
@@ -30,6 +33,7 @@
             padding: 10px;
             border-radius: 6px;
             overflow-x: auto;
+            margin-bottom: 20px;
         }
 
         table {
@@ -38,17 +42,20 @@
             margin-top: 10px;
         }
 
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid #555;
         }
 
-        th, td {
+        th,
+        td {
             padding: 8px;
             text-align: left;
         }
 
         details {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         summary {
@@ -68,10 +75,12 @@
 
 <body>
 
+    <h2>Bryan Snaily CAD Integration</h2>
+
     <p>This script holds functions for FiveM scripts to co-operate with Snaily CAD. These functions can be called from
         other scripts with appropriate exports.</p>
 
-    <h2>Setup</h2>
+    <h3>Setup</h3>
 
     <pre><code>Config.Defaults = {
     registrationStatus = 'Valid'
@@ -90,14 +99,13 @@
 }
     </code></pre>
 
-    <pre><code>URL - Link on which your CAD is hosted (example: https://api.your-domain-here/v1/ or
-    https://api-test.your-domain-here/v1/)
-    TOKEN - You can find this Token in your CAD Settings (Admin > CAD Settings > API Token)
-    </code></pre>
+    <p>URL - Link on which your CAD is hosted (example: https://api.your-domain-here/v1/ or
+        https://api-test.your-domain-here/v1/)<br>
+        TOKEN - You can find this Token in your CAD Settings (Admin &gt; CAD Settings &gt; API Token)</p>
 
-    <h2>Exports</h2>
+    <h3>Exports</h3>
 
-    <h3>Is Citizen Registered</h3>
+    <h4>Is Citizen Registered</h4>
 
     <pre><code>exports['bryan_snaily']:IsCitizenRegistered(firstname, lastname)
     </code></pre>
@@ -130,7 +138,7 @@
         </tbody>
     </table>
 
-    <h3>Insert New Citizen</h3>
+    <h4>Insert New Citizen</h4>
 
     <pre><code>exports['bryan_snaily']:InsertNewCitizen(firstname, lastname, birthdate, gender, ethnicity, height, weight,
     hairColor, eyeColor, address)
@@ -222,9 +230,9 @@
 
     <!-- Repeat similar formatting for other export functions -->
 
-    <h2>Integration</h2>
+    <h3>Integration</h3>
 
-    <h3>ESX</h3>
+    <h4>ESX</h4>
 
     <details>
         <summary>Insert New Citizen</summary>
@@ -260,7 +268,7 @@ end)
 
     <!-- Repeat similar formatting for other ESX integration points -->
 
-    <h3>QB</h3>
+    <h4>QB</h4>
 
     <details>
         <summary>Insert New Citizen</summary>
