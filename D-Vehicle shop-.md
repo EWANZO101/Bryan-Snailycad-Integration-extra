@@ -1,4 +1,4 @@
-## 2. D-Vehicle shop
+## . D-Vehicle shop
 - **Script Name:** D-Vehicle shop
 - **GitHub Repository:** [D-Vehicle Shop](#2)
 - **Compatibility Modification:**
