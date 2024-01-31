@@ -9,7 +9,8 @@ This README.md file outlines the known issues and errors that users may encounte
 - **Error Message:** `[ script:bryan_snaily] SCRIPT ERROR: @bryan_snaily/server/server.lua:124: [Error] API Error: 400 badRequest`
 - **Resolution:** Investigate the error in the specified file and line (server.lua:124) to identify the root cause. Ensure that the API request being made complies with the expected format and requirements.
 
--#### fix- [Go to fix]([https://github.com/EWANZO101/Bryan-Snailycad-Integration-/blob/main/1fix.md)
+- #### Fix: [Go to fix](https://github.com/EWANZO101/Bryan-Snailycad-Integration-/blob/main/1fix.md)
+
 - -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### 2. [Script: <script_name>] <Error_Type>
