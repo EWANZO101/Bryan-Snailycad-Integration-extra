@@ -12,7 +12,8 @@ This README.md file outlines the known issues and errors that users may encounte
 - #### Fix: [Go to fix](https://github.com/EWANZO101/Bryan-Snailycad-Integration-/blob/main/1fix.md)
 ----
 - -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+NOTE THERE IS MORE COMING SOON
+____________________________________________________________________________________________________________________________________________________________________________
 ### 2. [Script: <script_name>] <Error_Type>
 - **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
 - **Error Message:** `[ script:<script_name>] <Error_Type>`
