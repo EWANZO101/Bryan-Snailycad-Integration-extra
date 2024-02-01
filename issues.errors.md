@@ -17,21 +17,46 @@ This README.md file outlines the known issues and errors that users may encounte
 - **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
 - **Error Message:** `[ script:<script_name>] <Error_Type>`
 - **Resolution:** Examine the specific script and error type to understand the nature of the issue. Review the corresponding script file and address any code-related problems. If needed, consult the documentation for the script or seek assistance from the script developer.
+------------------------------------------------------------------------------------------------------
+### 3. [Script: <script_name>] <Error_Type>
+- **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
+- **Error Message:** `[ script:<script_name>] <Error_Type>`
+- **Resolution:** Examine the specific script and error type to understand the nature of the issue. Review the corresponding script file and address any code-related problems. If needed, consult the documentation for the script or seek assistance from the script developer.
+------------------------------------------------------------------------------------------------------
+### 4. [Script: <script_name>] <Error_Type>
+- **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
+- **Error Message:** `[ script:<script_name>] <Error_Type>`
+- **Resolution:** Examine the specific script and error type to understand the nature of the issue. Review the corresponding script file and address any code-related problems. If needed, consult the documentation for the script or seek assistance from the script developer.
+------------------------------------------------------------------------------------------------------
+### 5.[Script: <script_name>] <Error_Type>
+- **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
+- **Error Message:** `[ script:<script_name>] <Error_Type>`
+- **Resolution:** Examine the specific script and error type to understand the nature of the issue. Review the corresponding script file and address any code-related problems. If needed, consult the documentation for the script or seek assistance from the script developer.
+------------------------------------------------------------------------------------------------------
+### 6. [Script: <script_name>] <Error_Type>
+- **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
+- **Error Message:** `[ script:<script_name>] <Error_Type>`
+- **Resolution:** Examine the specific script and error type to understand the nature of the issue. Review the corresponding script file and address any code-related problems. If needed, consult the documentation for the script or seek assistance from the script developer.
+- ------------------------------------------------------------------------------------------------------
+### 7. [Script: <script_name>] <Error_Type>
+- **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
+- **Error Message:** `[ script:<script_name>] <Error_Type>`
+- **Resolution:** Examine the specific script and error type to understand the nature of the issue. Review the corresponding script file and address any code-related problems. If needed, consult the documentation for the script or seek assistance from the script developer.
 
-### 3. ...
-
-### 4. ...
-
-### 5. ...
-
-### 6. ...
-
-### 7. ...
-
-### 8. ...
-
-### 9. ...
-
-### 10. ...
-
+------------------------------------------------------------------------------------------------------
+### 8. [Script: <script_name>] <Error_Type>
+- **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
+- **Error Message:** `[ script:<script_name>] <Error_Type>`
+- **Resolution:** Examine the specific script and error type to understand the nature of the issue. Review the corresponding script file and address any code-related problems. If needed, consult the documentation for the script or seek assistance from the script developer.
+------------------------------------------------------------------------------------------------------
+### 9. [Script: <script_name>] <Error_Type>
+- **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
+- **Error Message:** `[ script:<script_name>] <Error_Type>`
+- **Resolution:** Examine the specific script and error type to understand the nature of the issue. Review the corresponding script file and address any code-related problems. If needed, consult the documentation for the script or seek assistance from the script developer.
+------------------------------------------------------------------------------------------------------
+### 10. [Script: <script_name>] <Error_Type>
+- **Description:** This issue involves an unspecified script and error type. Users may encounter various script errors with different error messages.
+- **Error Message:** `[ script:<script_name>] <Error_Type>`
+- **Resolution:** Examine the specific script and error type to understand the nature of the issue. Review the corresponding script file and address any code-related problems. If needed, consult the documentation for the script or seek assistance from the script developer.
+------------------------------------------------------------------------------------------------------
 Feel free to add more known issues as they are identified during testing or usage. Each issue should be numbered and include a brief description, the associated error message, and any suggested resolutions.
